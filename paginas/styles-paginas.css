@@ -1,0 +1,353 @@
+:root {
+    --main-bg-color: #E0E0E0;
+    --navbar-bg-color: #292929;
+    --letras-navbar-color: #e6e6e6;
+    --letras-section-color: rgb(29, 29, 29); 
+    --burger-color: #e6e6e6;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: var(--main-bg-color);
+}
+/* NAVBAR GOD */
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: var(--navbar-bg-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    color: var(--letras-navbar-color);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.1rem;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    z-index: 2;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links a {
+    color: var(--letras-navbar-color);
+    text-decoration: none;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.burger {
+    display: none;
+    cursor: pointer;
+    
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: var(--burger-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1024px){
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden; 
+    }
+    .nav-links{
+        position: absolute;
+         right: 0px;
+         height: 92vh;
+         top:8vh;
+         background-color: #292929;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 50%;
+         transform: translate(100%);
+         transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+/* ANIMACION DE LA NAVBAR */
+.nav-active{
+    transform: translate(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform:translate(0px)
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* CARDS DE PRODUCTOS */
+.Baki-Merch {
+    height: 300px;
+}
+.container {
+    padding: 1rem 2rem 2rem 1rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container .card {
+    position: relative;
+    margin: 20px;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d162f;
+    clip-path: circle(150px at 80%  20%);
+    transition: 0.5s ease-in-out;
+}
+.container .card:hover::before{
+    clip-path: circle(300px at 80% -20%);
+}
+.container .card::after{
+    content: 'Baki-TShirt';
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.04);
+}
+
+.container .card .imgBx{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container .card:hover .imgBx{
+    top: 0%;
+    transform: translateY(0%)
+}
+
+.container .card:hover .imgBx img{
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    transform: translate(-40%, -40%) rotate(5deg);
+    width: 100%;
+}
+
+.container .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align:center;
+    transition: 1s;
+    z-index: 1;
+}
+
+.container .card:hover .contentBx{
+    height: 130px;
+} 
+.container .card .contentBx h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+}
+.container .card:hover .contentBx h2{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6;
+}
+.container .card .contentBx .size{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.container .card:hover .contentBx .size{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.container .card .contentBx .size h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+.container .card .contentBx .size span{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: 0.5s;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.container .card .contentBx .size span:hover{
+    background: goldenrod;
+}
+
+.container .card .contentBx a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+.container .card:hover .contentBx a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
+.container .card .contentBx a:hover{
+    background: goldenrod;
+    transition: 0.5s;
+} 
+
+@media screen and (max-width:768px){
+    .container {
+        padding: 1rem 2rem 2rem 1rem;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+/* CARRITO DE PRODUCTOS */
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0,0,0,0.9);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-modal:checked ~ .modal{
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor-modal{
+    width: 500px;
+    height: 650px;
+    margin: auto;
+    transition: all 500ms ease;
+    position: relative;
+}
+
+.contenedor-modal header {
+    padding: 10px;
+    background: #0d162f;
+    color: #e6e6e6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contenedor-modal label{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #e6e6e6;
+    font-size: 15px;
+    cursor: pointer;
+}
+#btn-modal{
+    display: none;
+}
+.lbl-modal{
+    background: #0d162f;
+    padding: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    color: #e6e6e6;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
