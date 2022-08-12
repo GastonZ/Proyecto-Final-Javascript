@@ -444,6 +444,21 @@ nav{
     letter-spacing: 1px;
 }
 
+.clear{
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-top: -10px;
+    border-radius: 5px;
+    color: #e6e6e6;
+    background-color: #720303;
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
 
 .buy {
     display: flex;
@@ -466,3 +481,5 @@ nav{
     background-color: gold;
     color: #111;
 }
+
+

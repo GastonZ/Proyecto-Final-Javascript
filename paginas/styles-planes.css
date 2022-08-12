@@ -1,0 +1,266 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*Cards-Planes musculacion, calistenia y deportes */
+
+.navbar-container {
+    display: flex;
+    background: red;
+    min-height: 5vh;
+    top: 0%;
+}
+
+.body-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    background-color: #222;
+}
+
+.container .clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+
+}
+
+.container .clip.clip1 {
+
+    background: url(imagenes-planes/Calistenia.png);
+    background-size: cover;
+    clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
+}
+.container .clip.clip2 {
+    background: url(imagenes-planes/Musculacion.png);
+    background-size: cover;
+    clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
+}
+
+.container .clip.clip3 {
+    background: url(imagenes-planes/Deportes.jpg);
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
+}
+.container:hover .clip {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.container .clip:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.container .clip .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    background: #fff;
+    opacity: 0;
+    transition: 0.5s;
+    text-align: center;
+    height: 150px;
+    border-radius: 5px;
+}
+.container .clip .content button{
+    cursor: pointer;
+}
+
+.container .clip:hover .content {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* CARRITO MODAL */
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0,0,0,0.9);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-modal:checked ~ .modal{
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor-modal{
+    width: 500px;
+    height: 100%;
+    margin: auto;
+    transition: all 500ms ease;
+    position: relative;
+}
+
+.contenedor-modal header {
+    padding: 10px;
+    background: #0d162f;
+    color: #e6e6e6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contenedor-modal label{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #e6e6e6;
+    font-size: 15px;
+    cursor: pointer;
+}
+#btn-modal{
+    display: none;
+}
+.lbl-modal{
+    background: #0d162f;
+    padding: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    color: #e6e6e6;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* DENTRO DEL CARRITO */
+
+.info-contenido{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+
+.cart-row{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #929090;
+    align-items: center;
+    height: 20px;
+}
+
+.cart-row .item-icon{
+    height: 50px;
+
+}
+
+.cart-row .cart-quantity-input{
+    height: 1.5rem;
+    width: 2rem;
+    border: gold;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+
+.cart-row .cart-price {
+    color: #111;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.cart-row .btn-remove {
+    background-color: #720303;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.cart-row .btn-remove:hover{
+    transition: 0.5s;
+    color: #111;
+    background-color: gold;
+}
+
+.precio-total {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    float: right;
+    padding: 30px;
+}
+
+.precio-total .cart-total-title {
+    padding-right: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.precio-total .cart-total-price {
+    padding-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.buy {
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    margin-left: 2rem;
+    margin-top: -10px;
+    border-radius: 5px;
+    color: #e6e6e6;
+    background-color: #720303;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.precio-total .buy:hover{
+    transition: 0.5s;
+    background-color: gold;
+    color: #111;
+}
+
+.cart-items {
+    display: flex;
+    color: #fff;
+    justify-content: space-around;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.cart-items h2 {
+    font-size: 1.2rem;
+    margin-left: -3rem;
+}
+
+.cart-items h3 {
+    font-size: 1.2rem;
+    margin-left: -7rem;
+}

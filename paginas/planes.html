@@ -4,9 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-planes.css">
+    <script src="https://kit.fontawesome.com/05d3107ba6.js" crossorigin="anonymous"></script>
     <title>Plans</title>
 </head>
-<body>
-    
-</body>
+    <body>
+        <nav class="navbar-container">Navbar</nav>
+            <div class="body-body">
+                <div class="container">
+                   <div class="clip clip1">
+                        <div class="content">
+                            <h2 class="title"> Calisthenics </h2>
+                            <p> Plan de Calistenia, se trata de una disciplina en la que entrenaras
+                                usando tu propio peso corporal, cualquier persona puede hacerla, no
+                                requieres comprar ningun material, solo tu y tu voluntad.
+                            </p>
+                            <span class="price">$599</span>
+                                <button class="boton-add">Add to cart</button>        
+                        </div>
+                    </div>
+                    <div class="clip clip2">
+                        <div class="content">
+                            <h2> Fitness </h2>
+                            <p> Plan Fitness, con este plan aprenderas una gran cantidad de ejercicios
+                                con pesos (mancuernas, barras, etc), es recomendable tener acceso a un
+                                gimnacio, pero en caso de no contar con uno tambien existe la opcion de
+                                entrenar igual pero desde casa y una buena imaginacion con la que 
+                                solucionaras no contar con un gimnacio.
+                            </p>
+                            <span class="price">$499</span>
+                                <button class="boton-add">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="clip clip3">
+                        <div class="content">
+                            <h2> Sports </h2>
+                            <p> Tu mismo elige el deporte que practiques o quieras practicar, nosotros
+                                nos encargaremos de construirte un plan personalizado acorde a tu eleccion
+                            </p>
+                            <span class="price">$399</span>
+                            <button class="boton-add">Add to cart</button>
+                        </div>
+
+                    </div>
+                </div> 
+            </div>  
+                <input type="checkbox" id="btn-modal">
+                <label for="btn-modal" class="lbl-modal"><i class="fa-solid fa-cart-shopping"></i></label>
+                <div class="modal">
+                    <div class="contenedor-modal">
+                        <header>Shopping Cart</header>
+                        <label for="btn-modal"><i class="fa-solid fa-circle-xmark"></i></label>
+                        <div class="contenido">
+                            <div class="info-contenido">
+                                <span>Item</span>
+                                <span>Price</span>
+                            </div>
+                        </div>    
+                            <hr>
+                        <div class="cart-items"> 
+                          <h2 class="title">Fitness</h2>
+                          <h3 class="price">$499</h3>
+
+                        </div>
+                        <!-- PRECIO TOTAL -->
+                          
+                        <div class="precio-total">
+                            <span class="cart-total-title">TOTAL</span> 
+                            <span class="cart-total-price">$0</span>
+                            <button class="buy">PURCHASE</button> 
+                        </div>
+            
+                </div>
+                </div>
+                <div class="carrito">
+
+                </div>
+        <script src="stock.js"></script>
+        <script src="javascript-planes.js"></script>
+    </body>
 </html>
