@@ -95,6 +95,16 @@ function addToCartClicked(event) {
     addItemToCart(price, imageSrc)
     updateCartTotal()
 
+    Toastify({
+
+        text: "Item added to the cart",
+        style: {
+            background: "linear-gradient(45deg, #292929, #1a2f3f)",
+          },
+        duration: 1000
+        
+        }).showToast();
+
 
     // Push de lo que quedara guardado en los arrays
 
