@@ -1,11 +1,7 @@
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
-}
+(document.readyState == 'loading') ? document.addEventListener('DOMContentLoaded', ready) : ready()
 
 
-
+// Arrays donde pushear el contenido que ira en el local storage
 carritoPrecio = []
 carritoImg = []
 
@@ -57,12 +53,18 @@ function loadCart() {
 }
 
 function purchaseClicked() {
-    alert('Thank you for your purchase')
+
+    Swal.fire(
+        'Thank you so much!',
+        "We've received your order!",
+      )
     let cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
     updateCartTotal()
+
+    // Eliminar el contenido del local storage al apretar boton de compra
 
     localStorage.clear();
 }
@@ -94,15 +96,15 @@ function addToCartClicked(event) {
     updateCartTotal()
 
 
+    // Push de lo que quedara guardado en los arrays
+
     carritoPrecio.push(price)
     carritoImg.push(imageSrc)
     
-
+    // Setear y convertir con stringify al momento de clickear
 
     localStorage.setItem("precio", JSON.stringify(carritoPrecio))
     localStorage.setItem("imagen", JSON.stringify(carritoImg))
-
-
 
     
 }
@@ -154,22 +156,7 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerHTML = '$' + total 
 
 }
-    // PARA LUEGO jijijijija
-/* let clear = document.getElementsByClassName('clear')
 
-function clearCart(){
-
-    clear.addEventListener('click', localStorage.clear())
-}
- */
-/* 
-<img class="item-icon" src="${imageSrc}" alt="Remera baki" >
-<span class="cart-price">${price}</span>
-<div>                                
-    <input class="cart-quantity-input" type="number" value="1" >
-    <button class="btn-remove" type="button">REMOVE</button>
-</div>
- */
 
 
 
@@ -192,11 +179,9 @@ function clearCart(){
             
         // Animar Links    
             navLinks.forEach((link, index) =>{
-                    if(link.style.animation){
-                        link.style.animation = ''
-                    } else {
-                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 4 + 0.5}s`
-                    }
+
+                (link.style.animation) ? link.style.animation = '' : link.style.animation = `navLinkFade 0.5s ease forwards ${index / 4 + 0.5}s`
+
             });
         // Animar Burger 
             

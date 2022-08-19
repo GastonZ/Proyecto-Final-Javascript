@@ -132,11 +132,22 @@ section {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 5rem;
+    padding: 2rem;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
-    height: 90vh;
+    height: 40vh;
+
 }
+
+.overlay {
+    background-image: url(imagenes/opmpanel.avif);
+    height: 50vh;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+
 
 section h2 {
     font-size: 3rem;
@@ -177,6 +188,7 @@ h4 a:hover {
 h4 a:active {
     color :var(--letras-section-color);
 }
+
 
 /* CARDS BAKI ANIMACION Y CONTENIDO */
 
